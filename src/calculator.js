@@ -38,6 +38,27 @@ function divide(a, b) {
   return a / b;
 }
 
+// Modulo (remainder)
+function modulo(a, b) {
+  if (b === 0) {
+    throw new Error('Modulo by zero is not allowed.');
+  }
+  return a % b;
+}
+
+// Exponentiation
+function power(base, exponent) {
+  return base ** exponent;
+}
+
+// Square root
+function squareRoot(n) {
+  if (n < 0) {
+    throw new Error('Square root of a negative number is not allowed.');
+  }
+  return Math.sqrt(n);
+}
+
 const operations = { add, subtract, multiply, divide };
 
 function usage() {
@@ -72,4 +93,4 @@ if (require.main === module) {
   process.exitCode = main(process.argv.slice(2));
 }
 
-module.exports = { add, subtract, multiply, divide };
+module.exports = { add, subtract, multiply, divide, modulo, power, squareRoot };
